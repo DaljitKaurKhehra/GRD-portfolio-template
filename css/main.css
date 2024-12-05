@@ -2,22 +2,24 @@
 /* Set the desired font from google fonts, or adobe fonts here */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap');
 
+html,body {
+	height: 100%;
+}
+
+
 html {
     scroll-behavior: smooth;
 }
 
 /* GLOBALS */
-body{
+body {
     background-color: rgb(0, 0, 0);
     font-family: "Roboto", sans-serif;
-    /* 
-    100,400,700,900 weights available. Add differrent 
-    weights to the classes or elements that are needed 
-     */
-    font-weight: 400;
-    font-style: normal;
-    color:white;
+    color: white;
+    margin: 0;
+    padding: 0;
 }
+
 
 a {
     text-decoration: none;
@@ -31,14 +33,15 @@ p{
 
 h1 {
     font-weight: 900;
-    text-align: center;
     font-size: 2rem;
+    margin-bottom: 10px;
 }
 
-h2{
-    font-size:1.2rem;
+h2 {
+    font-size: 1.2rem;
     font-weight: 900;
-    margin-bottom:10px;
+    margin-bottom: 10px;
+    color: aqua;
 }
 
 h2 + ul {
@@ -53,6 +56,23 @@ h2 + ul > li {
 hr{
     width:100%;
 }
+
+
+#hero {
+	min-height:100vh;
+}
+
+#hero-social-list >ul {
+	position:absolute;
+	top:100px;
+}
+
+
+#hero-social-list >li {
+	display: inline;
+
+}
+
 
 
 .be::before, .em::before, .insta::before, .snap::before {
@@ -89,120 +109,98 @@ hr{
     width: 100%;
   }
 
-  .column {
+.column {
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
     flex: 1;
-    padding:10px;
+    padding-top: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-bottom: 5%;
   }
 
 /* LAYOUT */
 
-.full-page-section {
-    position: relative;
+
+.social-cont {
+	position:relative;
+	bottom:60px;
+	width:400px;
+/*	border: 1px solid white;*/
+	margin:0 auto;
+	z-index: 100;
+}
+
+.project-row {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 0%;
+}
+
+.project-text {
+    flex: 1;
+    padding-right: 5%;
+    padding-left: 11%;
+    max-width: 500px;
+}
+
+
+.left {
+    flex: 1;
+    padding-left: 5%;
+    padding-right: 11%;
+    border-radius: 5px;  /* Ensure border-radius is applied here */
+    overflow: hidden; /* Prevent content from overflowing and clipping */
+
+}
+
+.project-image {
+    flex: 1;
+	border-radius: 5px;
+    padding-left: 0%;
+    display: flex;
     justify-content: center;
-    width: 100%;
+    align-items: center;
+    padding-right: 11%;
+	overflow: hidden; /*Ensures the image stays inside the box container*/
+}
+
+.project-image img {
+    width: 100%;/* Ensures the image is stetched to fit the box*/
+    max-width: 95%;
+    height: auto;
+    border-radius: 5px;
     margin: 0 auto;
-    height: 100vh;
-/*    background-color: grey;*/
-    background-position: center center fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
+    padding-left: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+	transition: transform 0.3s ease; /* Smooth transition for zooming effect */
+
 }
 
-#hero{
-/*    background-image: url(../img/placeholder.png);*/
+.project-image:hover img {
+    transform: scale(1.1); /* Zooming in on the mockup*/
 }
 
-#hero > ul {
-    position: absolute;
-    bottom:25px;
+.project-image .left{
+    flex: 1;
+    padding-left: 20.5%;
+	padding-right: 10%;
+	padding-bottom: 0.5%;
 }
 
-#hero > ul > li {
-    display:inline;
-    margin:0 5px 0 5px;
+.project-text.left{
+	flex: 1;
+	padding-left: 5%;
+	padding-right: 11%;
+	max-width: 500px;
 }
-
-#about-intro{
-    background-image: url(../img/placeholder.png);
-}
-
-#intro-text > p, #intro-text >h2{
-    position: relative;
-    top:200px;
-    width:600px;
-}
-
-#category-selection{
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 90%; /* Adjust based on design */
-    margin:0 auto;
-    height:100vh;
-}
-
-.category-card {
-    width: 100%;
-    max-width: 250px;
-    margin: 25px;
-    min-height: 400px;
-    max-height: 400px;
-    border: 1px solid white;
-}
-
-.project-info{
-    position:relative;
-    top:300px;
-    left:50px;
-}
-
- /* Container to hold the video and any overlay content */
-    .video-background {
-      position: relative;
-      width: 100vw;
-      /* min-width: 1080px; */
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    iframe {
-        aspect-ratio: 16 / 9;
-        /* height: auto; */
-        /* width: 100%; */
-    }
-    /* Styling for the iframe to make it cover the full screen */
-    .video-background iframe {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100vw;  /* Full viewport width */
-      height: 100vh;  /* Full viewport height */
-      transform: translate(-50%, -50%); /* Center the video */
-      z-index: -1; /* Keeps video in the background */
-      pointer-events: none; /* Prevents clicking on the video */
-	  opacity: 35%;
-    }
-
- 
-
-#project-1 {
-    background-image: url(../img/placeholder.png);
-}
-
-
-
-
-/* tag colors */
-
 .green{
-    background-color:rgba(100, 125, 50, 1);
+/*    background-color:rgba(100, 125, 50, 1);*/
+    display: flex;
+    
 }
 
 .othercolor{
@@ -212,47 +210,260 @@ hr{
 .tag {
     display: inline-block;
     /* border:1px solid white; */
-    padding:5px 15px 5px 15px;
+    padding:10px 20px 0px 0px;
     border-radius:25px;
 }
 
+
+  /* Container to hold the video and any overlay content */
+    .video-background {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+/* Styling for the iframe to make it cover the full screen */
+    .video-background iframe {
+      position: relative;
+      top: 50%;
+      left: 0%;
+      width: 100vw;  /* Full viewport width */
+      height: 100vh;  /* Full viewport height */
+/*      transform: translate(-50%, -50%); */
+		/* Center the video */
+      z-index: -1; /* Keeps video in the background */
+      pointer-events: none; /* Prevents clicking on the video */
+		opacity: .5;
+    }
+.row.project-row .column.project-image .project-img {
+    border-radius: 10px;
+}
+.row.project-row .column.project-image .project-img.lefty {
+    border-radius: 10px;
+    margin-left: 44%;
+    margin-right: 10%;
+    margin-bottom: 0px;
+}
+
+.pieceimg img {
+
+	transition: transform 0.2s ease; /* Smooth transition for zooming effect */
+
+}
+
+.pieceimg:hover img {
+    transform: scale(1.1); /* Zooming in on the mockup*/
+}
+
+.homebutton {
+    align-content: center;
+    font-size: x-large;
+    text-align: left;
+    font-variant: normal;
+    font-style: normal;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: auto;
+    padding-right: auto;
+    left: auto;
+}
+
+.homebutton:hover {
+  color: cyan; /* recolors link on hover */
+	font-style:italic;
+}
+
+/* General Footer Styles */
+footer {
+  background-color: #FFFFFF;    /* Dark background for the footer */
+  color: black;              /* White text color */
+  padding: 20px 0;           /* Padding to create space inside the footer */
+  text-align: center;        /* Center-align the text */
+  position: relative;        /* To ensure footer stays at the bottom of the page */
+  width: 100%;               /* Make the footer stretch across the full width of the page */
+}
+
+/* Footer content */
+.footer-content {
+  max-width: 1200px;         /* Optional: limit the width of the content */
+  margin: 0 auto;            /* Center the footer content */
+  padding: 10px;             /* Add padding inside the footer content */
+}
+
+/* Styling for the footer links */
+footer nav ul {
+  list-style-type: none;     /* Remove default list styling */
+  padding: 0;                /* Remove default padding */
+}
+
+footer nav ul li {
+  display: inline-block;     /* Display list items inline */
+  margin: 0 15px;            /* Space out the links */
+}
+
+footer nav ul li a {
+  color: black;              /* White link text */
+  font-size: 14px;           /* Slightly smaller font for links */
+}
+
+footer nav ul li a:hover {
+  text-decoration: underline; /* Underline links on hover */
+}
+.row .column.stats h3 {
+    line-height: 23px;
+}
 
 
 
 @media (min-width: 360px) {
     .video-background iframe {
-        width: 500vw;  /* Full viewport width */
-        height: 500vh;  /* Full viewport height */
+        top: 0%;
+		width: 100vw;  /* Full viewport width */
+       height: 100vh;  /* Full viewport height */
       }
+	.row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+	}
+		
+	.pieceimg{
+		width:330px;
+		margin:0 auto;
+	}
+	
+	.project-text{
+		width: 300px;
+	}
+	.project-image{
+    width: 80%;
+    padding-left: 30px;
+    padding-top: 20px;
+    align-content: center;
+    border-radius: 5px;		
+	}
+.project-details .cleo {
+    width: 100%;
+}
   }
 
 @media (min-width: 375px) {
     .video-background iframe {
-        width: 500vw;  /* Full viewport width */
-        height: 500vh;  /* Full viewport height */
+        width: 100vw;  /* Full viewport width */
+        height: 100vh;  /* Full viewport height */
       }
+	.row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
   }
-
-
+.project-text{
+		width: 300px;
+	}
+	.project-image{
+    width: 80%;
+    padding-left: 40px;
+    padding-top: 20px;
+    align-content: center;
+    border-radius: 5px;		
+	}
+.project-details .cleo {
+    width: 100%;
+    display: flex;
+}
+.row .column .info {
+    margin-top: 15px;
+}
+.project-details .row .column.stats {
+    max-width: 22%;
+}
+.project-details div .pieceimg {
+    margin-left: 0px;
+    left: auto;
+    right: auto;
+}
+	
+	.pieceimg{
+		width:330px;
+		margin:0 auto;
+	}
+}
 @media (min-width: 400px) {
     .video-background iframe {
-        width: 500vw;  /* Full viewport width */
-        height: 500vh;  /* Full viewport height */
+        width: 100vw;  /* Full viewport width */
+        height: 100vh;  /* Full viewport height */
       }
+	.row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
   }
-  
+	
+	.project-text{
+		width: 320px;
+	}
+	.project-image{
+		width: 80%;
+		padding-top: 20px;
+		align-content: center;
+		
+	}
+	
+	.pieceimg{
+		min-width:350px;
+		margin:0 auto;
+	}
+.project-details .cleo {
+}
+.project-details .pieceimg .pieceimg {
+}
+	
+	}
   /* Medium devices (landscape tablets, 768px and up) */
   @media (min-width: 768px) {
-
+	  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+	  }
+		  .pieceimg{
+		width:700px;
+		margin:0 auto;
+	  }
   }
-  
-  /* Large devices (desktops, 992px and up) */
+	  
+	}
+	  
+	    /* Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
     .video-background iframe {
-        width: 400vw;  /* Full viewport width */
-        height: 200vh;  /* Full viewport height */
+        width: 100vw;  /* Full viewport width */
+        height: 100vh;  /* Full viewport height */
       }
+	  
+	  .project-image{
+		width: 100%;
+	  }
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
   }
+	  
+	  .pieceimg{
+		width:950px;
+		margin:0 auto;
+}
+}
+	  
   
   /* Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
@@ -260,4 +471,30 @@ hr{
         width: 100vw;  /* Full viewport width */
         height: 100vh;  /* Full viewport height */
       }
-  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+	  }
+	  
+	  .pieceimg{
+		width:1200px;
+		margin:0 auto;
+}
+	  }
+
+@media (min-width:375px){
+}
+
+@media screen and (orientation:landscape){
+}
+
+@media screen and (min-width:375px){
+}
+.left {
+}
+.right {
+}
+.lefty {
+}
