@@ -20,7 +20,18 @@ body {
     padding: 0;
 }
 
+#navbar {
+     position: absolute;
+    top: 0;
+    left: 0;
+    padding: 40px; /* Adds space around the logo */
+    z-index: 1000; /* Makes sure the navbar is on top of other content */
+}
 
+#logo {
+    width: 50px; /* Adjust the size of your logo */
+    height: auto;
+}
 a {
     text-decoration: none;
     color:white;
@@ -41,7 +52,8 @@ h2 {
     font-size: 1.2rem;
     font-weight: 900;
     margin-bottom: 10px;
-    color: aqua;
+    color: skyblue;
+    font-style: italic;
 }
 
 h2 + ul {
@@ -135,7 +147,7 @@ hr{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 0%;
 }
 
@@ -164,14 +176,14 @@ hr{
     justify-content: center;
     align-items: center;
     padding-right: 11%;
-	overflow: hidden; /*Ensures the image stays inside the box container*/
+	/*overflow: hidden; /*Ensures the image stays inside the box container*/
 }
 
 .project-image img {
     width: 100%;/* Ensures the image is stetched to fit the box*/
     max-width: 95%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 15px;
     margin: 0 auto;
     padding-left: 0px;
     -webkit-box-shadow: 0px 0px;
@@ -182,6 +194,7 @@ hr{
 
 .project-image:hover img {
     transform: scale(1.1); /* Zooming in on the mockup*/
+	box-shadow: 0px 3px 30px rgba(70, 70, 70, 1); /* Grey shadow on hover */
 }
 
 .project-image .left{
@@ -356,6 +369,20 @@ footer nav ul li a:hover {
     align-content: center;
     border-radius: 5px;		
 	}
+	
+	#navbar {
+     position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px; /* Adds space around the logo */
+    z-index: 1000; /* Makes sure the navbar is on top of other content */
+}
+
+#logo {
+    width: 25px; /* Adjust the size of your logo */
+    height: auto;
+		
+	}
 .project-details .cleo {
     width: 100%;
 }
@@ -448,7 +475,17 @@ footer nav ul li a:hover {
 		margin:0 auto;
 	  }
   }
-	  
+	  #navbar {
+     position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px; /* Adds space around the logo */
+    z-index: 1000; /* Makes sure the navbar is on top of other content */
+}
+
+#logo {
+    width: 30px; /* Adjust the size of your logo */
+    height: auto;
 	}
 	  
 	    /* Large devices (desktops, 992px and up) */
@@ -473,6 +510,17 @@ footer nav ul li a:hover {
 		width:950px;
 		margin:0 auto;
 }
+	  #navbar {
+     position: absolute;
+    top: 0;
+    left: 0;
+    padding: 40px; /* Adds space around the logo */
+    z-index: 1000; /* Makes sure the navbar is on top of other content */
+}
+
+#logo {
+    width: 40px; /* Adjust the size of your logo */
+    height: auto;
 }
 	  
   
@@ -493,6 +541,17 @@ footer nav ul li a:hover {
 		width:1200px;
 		margin:0 auto;
 }
+	  #navbar {
+     position: absolute;
+    top: 0;
+    left: 0;
+    padding: 50px; /* Adds space around the logo */
+    z-index: 1000; /* Makes sure the navbar is on top of other content */
+}
+
+#logo {
+    width: 50px; /* Adjust the size of your logo */
+    height: auto;
 	  }
 
 @media (min-width:375px){
@@ -508,4 +567,6 @@ footer nav ul li a:hover {
 .right {
 }
 .lefty {
+}
+.clients {
 }
